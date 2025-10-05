@@ -5,23 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Oragold Realestate | Luxury Real Estate in Dubai</title>
+    <title>Oragold Realestate | Luxury Real Estate</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
         }
         
         :root {
-            --gold: #D4AF37;
-            --dark-gold: #B8941F;
+            --gold: #B8A26C; /* Subtle, faded gold */
+            --dark-gold: #9C8A5A;
             --black: #1a1a1a;
             --white: #ffffff;
-            --light-gray: #f5f5f5;
+            --light-gray: #f8f8f8;
             --dark-gray: #333333;
+            --beige: #f5f3f0;
         }
         
         body {
@@ -31,75 +32,61 @@
             overflow-x: hidden;
             -webkit-text-size-adjust: 100%;
             -webkit-tap-highlight-color: transparent;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 300;
+            line-height: 1.2;
         }
         
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
         }
         
-        /* iPhone X and later safe areas */
-        @supports(padding: max(0px)) {
-            .safe-area-padding {
-                padding-left: max(20px, env(safe-area-inset-left));
-                padding-right: max(20px, env(safe-area-inset-right));
-            }
-        }
-        
-        /* Header & Navigation - iPhone Optimized */
+        /* Header - Minimal OTA Style */
         header {
             background-color: var(--white);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
             z-index: 1000;
-            padding-top: env(safe-area-inset-top);
+            padding: 25px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
         
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
-            position: relative;
         }
         
         .logo {
-            height: 45px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo img {
-            height: 100%;
-            width: auto;
-        }
-        
-        .logo-text {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--gold);
-            letter-spacing: 0.5px;
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 300;
+            color: var(--black);
+            letter-spacing: 1px;
         }
         
         .nav-links {
             display: flex;
             list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 25px;
+            gap: 40px;
         }
         
         .nav-links a {
             text-decoration: none;
             color: var(--black);
-            font-weight: 500;
+            font-weight: 300;
+            font-size: 15px;
+            letter-spacing: 0.5px;
             transition: color 0.3s;
             position: relative;
-            font-size: 16px;
         }
         
         .nav-links a:hover {
@@ -110,7 +97,7 @@
             content: '';
             position: absolute;
             width: 0;
-            height: 2px;
+            height: 1px;
             bottom: -5px;
             left: 0;
             background-color: var(--gold);
@@ -121,374 +108,323 @@
             width: 100%;
         }
         
-        .contact-btn {
-            background-color: var(--gold);
-            color: var(--white);
-            border: none;
-            padding: 12px 25px;
-            border-radius: 30px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 15px;
-            -webkit-appearance: none;
-        }
-        
-        .contact-btn:hover {
-            background-color: var(--dark-gold);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
-        }
-        
         .mobile-menu {
             display: none;
             font-size: 24px;
             cursor: pointer;
-            color: var(--black);
         }
         
-        /* Hero Section - iPhone Optimized */
+        /* Hero Section - OTA Style */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), 
-            url('./dubai-hero.jpg');
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                        url('https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
-            background-attachment: scroll;
             color: var(--white);
             min-height: 100vh;
             display: flex;
             align-items: center;
-            text-align: center;
             padding: 100px 0 60px;
-            position: relative;
         }
         
         .hero-content {
             max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
         }
         
-        .hero h1 {
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
+        .hero-subtitle {
+            font-size: 16px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
             margin-bottom: 20px;
+            color: var(--gold);
             font-weight: 300;
-            line-height: 1.2;
         }
         
-        .hero p {
-            font-size: clamp(1rem, 3vw, 1.2rem);
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 300;
+            line-height: 1.1;
             margin-bottom: 30px;
+            letter-spacing: -0.5px;
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 40px;
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
+            font-weight: 300;
         }
         
-        .hero-logo {
-            max-width: 320px;
-            margin: 0 auto 30px;
-            filter: brightness(0) invert(1);
-        }
-        
-        .scroll-indicator {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
+        .hero-btn {
+            background: transparent;
             color: var(--white);
-            font-size: 24px;
-            animation: bounce 2s infinite;
+            border: 1px solid var(--white);
+            padding: 15px 35px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 300;
         }
         
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0) translateX(-50%);
-            }
-            40% {
-                transform: translateY(-10px) translateX(-50%);
-            }
-            60% {
-                transform: translateY(-5px) translateX(-50%);
-            }
+        .hero-btn:hover {
+            background: var(--white);
+            color: var(--black);
         }
         
-        /* Introduction Section */
-        .intro {
-            padding: 80px 0;
+        /* About Section */
+        .about {
+            padding: 120px 0;
             background-color: var(--white);
         }
         
-        .section-title {
+        .section-header {
             text-align: center;
-            margin-bottom: 50px;
-            position: relative;
+            margin-bottom: 80px;
         }
         
-        .section-title h2 {
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
+        .section-title {
+            font-size: 2.5rem;
             font-weight: 300;
-            color: var(--black);
-            display: inline-block;
-        }
-        
-        .section-title h2:after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 3px;
-            background-color: var(--gold);
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .intro-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-        
-        .intro-text {
-            flex: 1;
-        }
-        
-        .intro-text p {
             margin-bottom: 20px;
+            color: var(--black);
+        }
+        
+        .section-subtitle {
             font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--dark-gray);
+            font-weight: 300;
             line-height: 1.7;
         }
         
-        .intro-image {
-            flex: 1;
-            border-radius: 12px;
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--dark-gray);
+        }
+        
+        .about-text p {
+            margin-bottom: 25px;
+        }
+        
+        .about-image {
+            border-radius: 5px;
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
         
-        .intro-image:hover {
-            transform: translateY(-5px);
-        }
-        
-        .intro-image img {
+        .about-image img {
             width: 100%;
             height: auto;
             display: block;
-            transition: transform 0.5s;
         }
         
-        .intro-image:hover img {
-            transform: scale(1.05);
+        /* Services Section */
+        .services {
+            padding: 120px 0;
+            background-color: var(--beige);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .service-item {
+            padding: 0;
+        }
+        
+        .service-title {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: var(--black);
+        }
+        
+        .service-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--dark-gray);
+            margin-bottom: 30px;
+        }
+        
+        .service-link {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: gap 0.3s;
+        }
+        
+        .service-link:hover {
+            gap: 15px;
         }
         
         /* Philosophy Section */
         .philosophy {
-            padding: 80px 0;
-            background-color: var(--light-gray);
+            padding: 120px 0;
+            background-color: var(--white);
         }
         
         .philosophy-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
         }
         
         .philosophy-item {
-            background-color: var(--white);
-            padding: 40px 30px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .philosophy-item:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--gold), var(--dark-gold));
-            transform: scaleX(0);
-            transition: transform 0.3s;
-        }
-        
-        .philosophy-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .philosophy-item:hover:before {
-            transform: scaleX(1);
+            padding: 0;
         }
         
         .philosophy-icon {
-            font-size: 2.8rem;
+            font-size: 2rem;
             color: var(--gold);
-            margin-bottom: 20px;
-            display: inline-block;
-            transition: transform 0.3s;
+            margin-bottom: 25px;
         }
         
-        .philosophy-item:hover .philosophy-icon {
-            transform: scale(1.1);
-        }
-        
-        .philosophy-item h3 {
+        .philosophy-title {
             font-size: 1.5rem;
+            font-weight: 300;
             margin-bottom: 15px;
             color: var(--black);
         }
         
-        .philosophy-item p {
+        .philosophy-description {
+            font-size: 1rem;
+            line-height: 1.7;
             color: var(--dark-gray);
-            line-height: 1.6;
         }
         
         /* Contact Section */
         .contact {
-            padding: 80px 0;
-            background-color: var(--white);
+            padding: 120px 0;
+            background-color: var(--beige);
         }
         
         .contact-container {
-            display: flex;
-            gap: 50px;
-        }
-        
-        .contact-info {
-            flex: 1;
-            background: linear-gradient(135deg, var(--light-gray) 0%, #f0f0f0 100%);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
         }
         
         .contact-info h3 {
             font-size: 1.8rem;
+            font-weight: 300;
             margin-bottom: 30px;
             color: var(--black);
-            position: relative;
-        }
-        
-        .contact-info h3:after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 2px;
-            background-color: var(--gold);
-            bottom: -10px;
-            left: 0;
         }
         
         .contact-details {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
         
         .contact-details p {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             display: flex;
             align-items: flex-start;
+            font-size: 1.1rem;
         }
         
         .contact-details i {
             color: var(--gold);
             margin-right: 15px;
             margin-top: 5px;
-            font-size: 18px;
             min-width: 20px;
         }
         
-        .contact-form {
-            flex: 1;
-        }
-        
         .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--dark-gray);
+            margin-bottom: 25px;
         }
         
         .form-control {
             width: 100%;
-            padding: 15px;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 16px; /* Prevents zoom on iOS */
-            transition: all 0.3s;
-            background-color: var(--white);
-            -webkit-appearance: none;
+            padding: 15px 0;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            background: transparent;
+            font-size: 16px;
+            transition: border-color 0.3s;
+            font-family: 'Inter', sans-serif;
         }
         
         .form-control:focus {
-            border-color: var(--gold);
             outline: none;
-            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+            border-color: var(--gold);
         }
         
         textarea.form-control {
-            min-height: 150px;
+            min-height: 100px;
             resize: vertical;
         }
         
         .submit-btn {
-            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
-            color: var(--white);
-            border: none;
-            padding: 16px 30px;
-            border-radius: 30px;
-            font-weight: 600;
+            background: transparent;
+            color: var(--black);
+            border: 1px solid var(--black);
+            padding: 15px 35px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             cursor: pointer;
             transition: all 0.3s;
-            width: 100%;
-            font-size: 16px;
-            -webkit-appearance: none;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            margin-top: 10px;
         }
         
         .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 7px 20px rgba(212, 175, 55, 0.4);
+            background: var(--black);
+            color: var(--white);
         }
         
         /* Footer */
         footer {
             background-color: var(--black);
             color: var(--white);
-            padding: 70px 0 30px;
+            padding: 80px 0 40px;
         }
         
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        
+        .footer-description {
+            color: #999;
+            line-height: 1.7;
+            max-width: 400px;
         }
         
         .footer-column h4 {
-            font-size: 1.2rem;
+            font-size: 16px;
             margin-bottom: 25px;
-            position: relative;
             color: var(--white);
-        }
-        
-        .footer-column h4:after {
-            content: '';
-            position: absolute;
-            width: 40px;
-            height: 2px;
-            background-color: var(--gold);
-            bottom: -10px;
-            left: 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 400;
         }
         
         .footer-links {
@@ -500,91 +436,50 @@
         }
         
         .footer-links a {
-            color: #cccccc;
+            color: #999;
             text-decoration: none;
-            transition: all 0.3s;
+            transition: color 0.3s;
+            font-size: 15px;
         }
         
         .footer-links a:hover {
             color: var(--gold);
-            padding-left: 5px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 42px;
-            height: 42px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: var(--white);
-            text-decoration: none;
-            transition: all 0.3s;
-            font-size: 18px;
-        }
-        
-        .social-links a:hover {
-            background-color: var(--gold);
-            color: var(--black);
-            transform: translateY(-3px);
         }
         
         .footer-bottom {
             text-align: center;
-            padding-top: 30px;
+            padding-top: 40px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #999;
-            font-size: 0.9rem;
+            color: #666;
+            font-size: 14px;
         }
         
-        /* iPhone & Mobile Optimizations */
-        @media (max-width: 992px) {
-            .intro-content {
-                flex-direction: column;
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 30px;
             }
             
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .about-content, 
+            .services-grid,
+            .philosophy-grid,
             .contact-container {
-                flex-direction: column;
+                grid-template-columns: 1fr;
+                gap: 50px;
             }
             
-            .hero {
-                background-attachment: scroll;
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
             }
         }
         
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--white);
-                flex-direction: column;
-                padding: 20px;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-                border-top: 1px solid #eee;
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .nav-links li {
-                margin: 0 0 15px 0;
-            }
-            
-            .nav-links a {
-                display: block;
-                padding: 10px 0;
-                font-size: 18px;
             }
             
             .mobile-menu {
@@ -593,62 +488,38 @@
             
             .hero {
                 padding: 120px 0 60px;
-                min-height: 90vh;
+                text-align: center;
             }
             
-            .contact-info, .contact-form {
-                padding: 30px 25px;
+            .hero-title {
+                font-size: 2.8rem;
             }
             
-            .philosophy-item {
-                padding: 30px 20px;
-            }
-            
-            .intro, .philosophy, .contact {
-                padding: 60px 0;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .container {
-                padding: 0 15px;
-            }
-            
-            .hero h1 {
+            .section-title {
                 font-size: 2rem;
             }
             
-            .philosophy-grid {
-                grid-template-columns: 1fr;
+            .about, .services, .philosophy, .contact {
+                padding: 80px 0;
             }
             
             .footer-content {
                 grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .logo-text {
-                font-size: 18px;
-            }
-            
-            .contact-btn {
-                padding: 10px 20px;
-                font-size: 14px;
+                gap: 40px;
             }
         }
         
-        /* iPhone X and later specific optimizations */
-        @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3),
-               only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3),
-               only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2),
-               only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3),
-               only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
-            header {
-                padding-top: env(safe-area-inset-top);
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 20px;
             }
             
-            .hero {
-                padding-top: calc(80px + env(safe-area-inset-top));
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
             }
         }
     </style>
@@ -656,10 +527,8 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="container header-container safe-area-padding">
-            <div class="logo">
-                <div class="logo-text">ORAGOLD REALESTATE</div>
-            </div>
+        <div class="container header-container">
+            <div class="logo">ORAGOLD</div>
             
             <div class="mobile-menu">
                 <i class="fas fa-bars"></i>
@@ -668,48 +537,63 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#philosophy">Our Philosophy</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#philosophy">Philosophy</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            
-            <button class="contact-btn">Get In Touch</button>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container hero-content">
-            <div class="hero-logo">
-                <div style="font-size: clamp(2rem, 6vw, 3.5rem); font-weight: bold; text-align: center; line-height: 1.1;">
-                    <span style="color: var(--gold);">ORA</span><br>
-                    <span style="color: var(--gold);">GOLD</span><br>
-                    <span style="font-size: clamp(1rem, 3vw, 1.5rem); color: var(--white);">REALESTATE</span>
-                </div>
-            </div>
-            <h1>Your Gateway to Golden Opportunities</h1>
-            <p>Oragold Realestate stands as a beacon of sophistication and trust in Dubai's dynamic property landscape, offering bespoke real estate solutions with unparalleled attention to detail.</p>
-            <button class="contact-btn">Discover Our Services</button>
-            <div class="scroll-indicator">
-                <i class="fas fa-chevron-down"></i>
-            </div>
+            <div class="hero-subtitle">Luxury Real Estate</div>
+            <h1 class="hero-title">Reimagining Luxury Living</h1>
+            <p class="hero-description">Oragold Realestate stands as a beacon of sophistication and trust in Dubai's dynamic property landscape, offering bespoke real estate solutions with unparalleled attention to detail.</p>
+            <button class="hero-btn">Discover Our Vision</button>
         </div>
     </section>
 
-    <!-- Introduction Section -->
-    <section class="intro" id="about">
+    <!-- About Section -->
+    <section class="about" id="about">
         <div class="container">
-            <div class="section-title">
-                <h2>Defining Luxury, Delivering Excellence</h2>
+            <div class="section-header">
+                <h2 class="section-title">Defining Luxury, Delivering Excellence</h2>
+                <p class="section-subtitle">We are committed to bring happiness one step closer to our communities by rethinking the way we live.</p>
             </div>
             
-            <div class="intro-content">
-                <div class="intro-text">
+            <div class="about-content">
+                <div class="about-text">
                     <p>Founded on the same principles of bespoke quality and unparalleled attention to detail as our sister brand, La Donna Di Ferro, Oragold Realestate offers a discreet and personalized gateway to Dubai's most exclusive real estate opportunities.</p>
                     <p>We don't just find properties; we uncover golden possibilities tailored to your vision of luxury. Our team of seasoned professionals brings deep market knowledge and a commitment to excellence in every transaction.</p>
                     <p>Located in the heart of Jumeirah Village Circle, we are perfectly positioned to serve Dubai's most discerning clients in their pursuit of exceptional properties and investment opportunities.</p>
                 </div>
-                <div class="intro-image">
-                   <img src="./luxury-property.jpg" alt="Luxury Dubai Property">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Luxury Property">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">We pursue the perfect balance between the environment and human needs, delivering meaningful impact for society.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3 class="service-title">Luxury Properties</h3>
+                    <p class="service-description">A picturesque moment of the perfect blend of luxury and purposeful design, Oragold Properties is the epitome of intricate detail that forms the most beautiful and harmoniously designed properties.</p>
+                    <a href="#" class="service-link">View Properties <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="service-item">
+                    <h3 class="service-title">Investment Opportunities</h3>
+                    <p class="service-description">Our developments are a symbol of prosperity and the realization of aspirations. We are committed to availing an exceptional lifestyle that is second to none.</p>
+                    <a href="#" class="service-link">Explore Investments <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -718,8 +602,9 @@
     <!-- Philosophy Section -->
     <section class="philosophy" id="philosophy">
         <div class="container">
-            <div class="section-title">
-                <h2>The Oragold Standard</h2>
+            <div class="section-header">
+                <h2 class="section-title">Our Philosophy</h2>
+                <p class="section-subtitle">With passion we build, with commitment we develop, and with heart we deliver.</p>
             </div>
             
             <div class="philosophy-grid">
@@ -727,32 +612,32 @@
                     <div class="philosophy-icon">
                         <i class="fas fa-user-tie"></i>
                     </div>
-                    <h3>Bespoke Consultancy</h3>
-                    <p>Your vision is unique. Our approach is tailored exclusively to you, ensuring personalized service that exceeds expectations.</p>
+                    <h3 class="philosophy-title">Bespoke Consultancy</h3>
+                    <p class="philosophy-description">Your vision is unique. Our approach is tailored exclusively to you, ensuring personalized service that exceeds expectations.</p>
                 </div>
                 
                 <div class="philosophy-item">
                     <div class="philosophy-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3>Discretion & Trust</h3>
-                    <p>We operate with the utmost confidentiality and integrity, building lasting relationships based on trust and reliability.</p>
+                    <h3 class="philosophy-title">Discretion & Trust</h3>
+                    <p class="philosophy-description">We operate with the utmost confidentiality and integrity, building lasting relationships based on trust and reliability.</p>
                 </div>
                 
                 <div class="philosophy-item">
                     <div class="philosophy-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Market Mastery</h3>
-                    <p>Deep, insightful knowledge of Dubai's premium real estate sectors ensures you make informed, strategic decisions.</p>
+                    <h3 class="philosophy-title">Market Mastery</h3>
+                    <p class="philosophy-description">Deep, insightful knowledge of Dubai's premium real estate sectors ensures you make informed, strategic decisions.</p>
                 </div>
                 
                 <div class="philosophy-item">
                     <div class="philosophy-icon">
                         <i class="fas fa-network-wired"></i>
                     </div>
-                    <h3>Golden Network</h3>
-                    <p>Access to an exclusive portfolio of off-market and premier listings through our extensive industry connections.</p>
+                    <h3 class="philosophy-title">Golden Network</h3>
+                    <p class="philosophy-description">Access to an exclusive portfolio of off-market and premier listings through our extensive industry connections.</p>
                 </div>
             </div>
         </div>
@@ -761,8 +646,9 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <div class="section-title">
-                <h2>Begin Your Journey With Us</h2>
+            <div class="section-header">
+                <h2 class="section-title">Begin Your Journey With Us</h2>
+                <p class="section-subtitle">Reach out for a confidential consultation on how we can serve your real estate aspirations.</p>
             </div>
             
             <div class="contact-container">
@@ -785,30 +671,24 @@
                             <span>info@oragoldrealestate.ae</span>
                         </p>
                     </div>
-                    
-                    <p>Reach out for a confidential consultation on how we can serve your real estate aspirations.</p>
                 </div>
                 
                 <div class="contact-form">
                     <form id="contactForm">
                         <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                            <input type="text" id="name" class="form-control" placeholder="Full Name" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                            <input type="email" id="email" class="form-control" placeholder="Email Address" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" class="form-control" placeholder="Your Phone">
+                            <input type="tel" id="phone" class="form-control" placeholder="Phone Number">
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" class="form-control" placeholder="How can we assist you?" required></textarea>
+                            <textarea id="message" class="form-control" placeholder="Your Message" required></textarea>
                         </div>
                         
                         <button type="submit" class="submit-btn">Send Message</button>
@@ -822,31 +702,29 @@
     <footer>
         <div class="container">
             <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">ORAGOLD</div>
+                    <p class="footer-description">Oragold Realestate stands as a beacon of sophistication and trust in Dubai's dynamic property landscape, offering bespoke real estate solutions.</p>
+                </div>
+                
                 <div class="footer-column">
-                    <h4>CUSTOMER CARE</h4>
+                    <h4>Services</h4>
                     <ul class="footer-links">
-                        <li><a href="#about">Our Philosophy</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Luxury Properties</a></li>
+                        <li><a href="#">Investment Opportunities</a></li>
+                        <li><a href="#">Consultancy</a></li>
+                        <li><a href="#">Property Management</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h4>LEGAL AREA</h4>
+                    <h4>Company</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Terms of Use</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#philosophy">Our Philosophy</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
                     </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h4>FOLLOW US</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    </div>
                 </div>
             </div>
             
@@ -857,20 +735,14 @@
     </footer>
 
     <script>
-        // Enhanced JavaScript for iPhone optimization
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenu = document.querySelector('.mobile-menu');
             const navLinks = document.querySelector('.nav-links');
-            const contactButtons = document.querySelectorAll('.contact-btn');
             
-            // Mobile menu toggle
             mobileMenu.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-                mobileMenu.querySelector('i').classList.toggle('fa-bars');
-                mobileMenu.querySelector('i').classList.toggle('fa-times');
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
             });
             
-            // Contact form submission
             const contactForm = document.getElementById('contactForm');
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
@@ -878,16 +750,6 @@
                 contactForm.reset();
             });
             
-            // Contact buttons click handler
-            contactButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    document.getElementById('contact').scrollIntoView({ 
-                        behavior: 'smooth' 
-                    });
-                });
-            });
-            
-            // Smooth scrolling for navigation links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -897,35 +759,17 @@
                     
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
-                        // Close mobile menu if open
-                        if (window.innerWidth <= 768) {
-                            navLinks.classList.remove('active');
-                            mobileMenu.querySelector('i').classList.add('fa-bars');
-                            mobileMenu.querySelector('i').classList.remove('fa-times');
-                        }
-                        
                         window.scrollTo({
                             top: targetElement.offsetTop - 100,
                             behavior: 'smooth'
                         });
+                        
+                        if (window.innerWidth <= 768) {
+                            navLinks.style.display = 'none';
+                        }
                     }
                 });
             });
-            
-            // Add loading state for images to prevent layout shift
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                img.addEventListener('load', function() {
-                    this.style.opacity = 1;
-                });
-                
-                // Set initial opacity to 0 for fade-in effect
-                img.style.opacity = 0;
-                img.style.transition = 'opacity 0.5s ease';
-            });
-            
-            // Prevent zoom on input focus in iOS
-            document.addEventListener('touchstart', function() {}, {passive: true});
         });
     </script>
 </body>

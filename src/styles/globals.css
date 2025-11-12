@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Inter:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #B8A26C;
+  --dark-gold: #9C8A5A;
+  --black: #1a1a1a;
+  --white: #ffffff;
+  --light-gray: #f8f8f8;
+  --dark-gray: #333333;
+  --beige: #f5f3f0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  background-color: var(--white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--black);
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px !important;
+  }
+  
+  .section-spacing {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .section-title {
+    font-size: 2rem !important;
+  }
+  
+  .nav-links {
+    display: none !important;
+  }
+  
+  .mobile-menu {
+    display: block !important;
+  }
+  
+  .about-content,
+  .services-grid,
+  .philosophy-grid,
+  .contact-container {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  
+  .btn-gold {
+    width: 100% !important;
+    text-align: center !important;
+  }
+  
+  .hero-btn {
+    width: 100% !important;
+    text-align: center !important;
+  }
+  
+  .text-balance {
+    text-wrap: normal !important;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 0 30px !important;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem !important;
+  }
+  
+  .section-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .about-content,
+  .services-grid,
+  .philosophy-grid,
+  .contact-container {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  
+  .footer-content {
+    grid-template-columns: 2fr 1fr !important;
+    gap: 30px !important;
+  }
+}
+
+/* Add responsive image handling */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Improve touch targets for mobile */
+@media (max-width: 768px) {
+  .nav-links a {
+    padding: 10px 15px !important;
+    font-size: 16px !important;
+  }
+  
+  .mobile-menu {
+    font-size: 28px !important;
+  }
+  
+  .form-control {
+    padding: 12px 0 !important;
+    font-size: 16px !important;
+  }
+  
+  .submit-btn {
+    padding: 12px 20px !important;
+    font-size: 14px !important;
+  }
+}

@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -17,6 +22,10 @@ const Header: React.FC = () => {
     { id: 'philosophy', label: 'Philosophy' },
     { id: 'contact', label: 'Contact' },
   ];
+
+  if (!isClient) {
+    return <header className="fixed w-full bg-white z-50 py-6 border-b border-gray-100 shadow-sm"></header>;
+  }
 
   return (
     <header className="fixed w-full bg-white z-50 py-6 border-b border-gray-100 shadow-sm">

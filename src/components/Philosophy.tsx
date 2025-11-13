@@ -5,22 +5,22 @@ import { FaUserTie, FaShieldAlt, FaChartLine, FaNetworkWired } from 'react-icons
 const Philosophy: React.FC = () => {
   const philosophyItems = [
     {
-      title: "Bespoke Consultancy",
+      title: "BESPOKE CONSULTANCY",
       description: "Your vision is unique. Our approach is tailored exclusively to you, ensuring personalized service that exceeds expectations.",
       icon: <FaUserTie className="text-3xl" />
     },
     {
-      title: "Discretion & Trust",
+      title: "DISCRETION & TRUST",
       description: "We operate with the utmost confidentiality and integrity, building lasting relationships based on trust and reliability.",
       icon: <FaShieldAlt className="text-3xl" />
     },
     {
-      title: "Market Mastery",
+      title: "MARKET MASTERY",
       description: "Deep, insightful knowledge of Dubai's premium real estate sectors ensures you make informed, strategic decisions.",
       icon: <FaChartLine className="text-3xl" />
     },
     {
-      title: "Golden Network",
+      title: "GOLDEN NETWORK",
       description: "Access to an exclusive portfolio of off-market and premier listings through our extensive industry connections.",
       icon: <FaNetworkWired className="text-3xl" />
     }
@@ -34,9 +34,9 @@ const Philosophy: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-serif font-light mb-4"
+            className="text-3xl md:text-4xl font-serif font-light mb-4 text-black"
           >
-            Our Philosophy
+            OUR PHILOSOPHY
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -62,7 +62,7 @@ const Philosophy: React.FC = () => {
               <div className="text-gold mb-6 flex justify-center">
                 {item.icon}
               </div>
-              <h3 className="text-xl font-serif font-light mb-4">{item.title}</h3>
+              <h3 className="text-xl font-serif font-light mb-4 text-black">{item.title}</h3>
               <p className="text-gray-600">{item.description}</p>
             </motion.div>
           ))}

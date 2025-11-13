@@ -2,3 +2,44 @@ node_modules/
 .next/
 .env
 .env
+# Dependencies
+node_modules/
+
+# Build outputs
+.next/
+out/
+
+# Environment variables
+.env*.local
+
+# Runtime data
+.fusebox/
+.nyc_output/
+coverage/
+lib/
+temp/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Optional npm cache directory
+.npm
+
+# Output of `npm pack`
+*.tgz
+
+# Next.js
+.next
+out/
+
+# Production build
+dist/
+build/

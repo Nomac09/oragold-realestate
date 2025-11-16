@@ -19,32 +19,31 @@ const Header = () => {
   }, []);
   
   const scrollToSection = (sectionId: string) => {
-    setIsMobileMenuOpen(false); // Close mobile menu when clicking a link
-    
+    setIsMobileMenuOpen(false);
     const section = document.getElementById(sectionId);
     if (section) {
       window.scrollTo({
-        top: section.offsetTop - (window.innerWidth < 768 ? 80 : 100), // Smaller offset on mobile
+        top: section.offsetTop - (window.innerWidth < 768 ? 80 : 100),
         behavior: 'smooth'
       });
     }
   };
 
-  // Exact champagne gold color from the image
   const exactGoldColor = "#E8D6A9";
   
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-3 md:py-4'}`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          {/* Text Logo with responsive sizing */}
+          {/* Text Logo with responsive sizing
+              HIDE on mobile, show from md up */}
           <a 
             href="#" 
             onClick={(e) => {
               e.preventDefault();
               scrollToSection('hero');
             }} 
-            className="cursor-pointer"
+            className="cursor-pointer hidden md:flex" /* <-- hidden on mobile */
             aria-label="Go to homepage"
           >
             <div className="flex flex-col items-center">
@@ -108,7 +107,7 @@ const Header = () => {
           
           {/* Mobile Menu Button with larger touch target */}
           <button 
-            className="md:hidden p-2 -mr-2" // Added padding for larger touch target
+            className="md:hidden p-2 -mr-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMobileMenuOpen}

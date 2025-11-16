@@ -30,8 +30,11 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="hero" className="relative h-screen min-h-[520px] flex items-center overflow-hidden bg-white">
-      {/* Desktop parallax background: visible >= md */}
+    <section
+      id="hero"
+      className="relative min-h-[40vh] md:h-screen md:min-h-[520px] flex items-start md:items-center overflow-hidden bg-white"
+    >
+      {/* Desktop parallax background */}
       <div
         ref={bgRef}
         className="hidden md:block absolute inset-0 z-0 will-change-transform transition-transform duration-200"
@@ -44,15 +47,13 @@ const Hero: React.FC = () => {
           priority
           sizes="100vw"
           className="object-cover"
-          placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA..."
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/20 to-transparent pointer-events-none" />
       </div>
 
-      {/* Mobile: full-screen text-logo (visible only below md) */}
-      <div className="md:hidden absolute inset-0 z-0 flex items-center justify-center">
-        <div className="flex flex-col items-center w-full px-6">
+      {/* Mobile: taller hero and center logo lower on the screen */}
+      <div className="md:hidden relative z-20 w-full flex items-center justify-center pt-14 pb-10 px-10">
+        <div className="flex flex-col items-center text-center w-full max-w-xs">
           <span
             className="font-serif leading-none"
             style={{ color: exactGoldColor, fontSize: "clamp(36px, 18vw, 96px)", fontWeight: 300 }}
@@ -77,10 +78,9 @@ const Hero: React.FC = () => {
             REAL ESTATE
           </span>
         </div>
-        {/* NO overlay, NO backdrop blur on mobile */}
       </div>
 
-      {/* Content: keep only on md+ (hide on mobile) */}
+      {/* Desktop content */}
       <div className="relative z-20 container mx-auto px-6 hidden md:block">
         <div className="max-w-sm sm:max-w-xs">
           <div className="backdrop-blur-sm bg-black/18 p-3 sm:p-4 rounded-md inline-block">

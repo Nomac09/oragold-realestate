@@ -15,7 +15,7 @@ const About = () => {
 
       <section
         id="about"
-        className="py-20 bg-white -mt-40 md:mt-0 md:py-24"
+        className="py-0 bg-white -mt-65 md:mt-0 md:py-24"
         style={{ marginTop: 0 }}
       >
         <div className="container mx-auto px-4">

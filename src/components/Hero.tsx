@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Mobile: taller hero and center logo lower on the screen */}
-      <div className="md:hidden relative z-20 w-full flex items-center justify-center pt-14 pb-10 px-10">
+      <div className="md:hidden flex flex-col items-center justify-center min-h-[40vh] w-full">
         <div className="flex flex-col items-center text-center w-full max-w-xs">
           <span
             className="font-serif leading-none"

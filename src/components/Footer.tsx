@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
               className="tracking-widest text-[0.55rem] text-[#E8D6A9]"
               style={{ fontFamily: "'Playfair Display', Georgia, serif'" }}
             >
-              REAL ESTATE
+              REALESTATE
             </span>
 
             <p
@@ -128,7 +128,7 @@ const Footer: React.FC = () => {
         {/* bottom row */}
         <div className="mt-8 border-t border-gray-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-400 text-xs sm:text-sm" style={{ fontFamily: "Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial" }}>
-            &copy; {new Date().getFullYear()} ORA GOLD Real Estate. All rights reserved.
+            &copy; {new Date().getFullYear()} ORAGOLD RealEstate. All rights reserved.
           </p>
           <div className="text-gray-400 text-xs sm:text-sm" style={{ fontFamily: "Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial" }}>
             Designed in Dubai

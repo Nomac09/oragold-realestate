@@ -8,7 +8,7 @@ const About = () => {
     <>
       <Head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Allura&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap"
           rel="stylesheet"
         />
       </Head>
@@ -26,12 +26,12 @@ const About = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               style={{
-                fontFamily: "'Allura', cursive",
-                fontSize: 'clamp(28px, 6.5vw, 48px)',
-                letterSpacing: '-0.01em',
-                lineHeight: 1.02,
-                textTransform: 'none',
-                fontWeight: 400,
+                fontFamily: "'Playfair Display', serif",
+                fontSize: 'clamp(28px, 5vw, 40px)',
+                letterSpacing: '0.02em',
+                lineHeight: 1.2,
+                fontWeight: 600,
+                color: '#1a1a1a'
               }}
               className="mb-4"
             >

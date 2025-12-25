@@ -28,7 +28,7 @@ const Philosophy = () => {
       >
         <div className="relative w-full h-full">
           <Image
-            src="/images/dubai2.jpg"
+            src="/images/dubai.jpg"
             alt="Dubai Luxury"
             fill
             sizes="100vw"

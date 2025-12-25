@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
         backgroundSize: '200px 200px'
       }}
     >
-      <div className="flex flex-col items-center text-center w-full max-w-md">
+      <div className="flex flex-col items-center text-center w-full max-w-md mt-[-15vh]"> {/* Added mt-[-15vh] to move up */}
         {/* Logo Stack */}
         <div className="flex flex-col items-center text-center w-full">
           <span
